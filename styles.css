@@ -44,7 +44,7 @@ html {
   html {
     scroll-behavior: auto;
   }
-  * {
+  *:not(.living-photo__frame) {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -1374,7 +1374,7 @@ section {
   justify-content: center;
   opacity: 0;
   transform: scale(1);
-  animation: livingPhotoCycle 15s ease-in-out infinite;
+  animation: livingPhotoCycle 9s ease-in-out infinite;
 }
 
 .living-photo__frame::after {
@@ -1388,10 +1388,10 @@ section {
   animation-delay: 0s;
 }
 .living-photo__frame--2 {
-  animation-delay: 5s;
+  animation-delay: 3s;
 }
 .living-photo__frame--3 {
-  animation-delay: 10s;
+  animation-delay: 6s;
 }
 
 .living-photo__icon {
@@ -1418,28 +1418,19 @@ section {
     opacity: 0;
     transform: scale(1);
   }
-  4% {
+  6% {
     opacity: 1;
   }
-  28% {
+  27% {
     opacity: 1;
-    transform: scale(1.09);
+    transform: scale(1.05);
   }
   33% {
     opacity: 0;
-    transform: scale(1.1);
+    transform: scale(1.15);
   }
   100% {
     opacity: 0;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .living-photo__frame {
-    animation: none;
-    opacity: 0;
-  }
-  .living-photo__frame--1 {
-    opacity: 1;
-  }
-}
