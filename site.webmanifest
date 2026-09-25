@@ -1,0 +1,16 @@
+{
+  "name": "Love & Relax Terapia",
+  "short_name": "Love & Relax",
+  "description": "Masajes relajantes, descontracturantes y limpiezas faciales profesionales en Quilicura.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbf6ee",
+  "theme_color": "#3c2a1e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
