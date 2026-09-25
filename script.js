@@ -70,8 +70,9 @@
 
   function onScroll() {
     const y = window.scrollY || document.documentElement.scrollTop;
-    nav.classList.toggle("is-scrolled", y > 40);
-    floatWa.classList.toggle("is-visible", y > 400);
+    if (nav) nav.classList.toggle("is-scrolled", y > 40);
+    if (floatWa) floatWa.classList.toggle("is-visible", y > 400);
+    if (!progressBar) return;
 
     const doc = document.documentElement;
     const scrollable = doc.scrollHeight - doc.clientHeight;

@@ -8,7 +8,9 @@ y un único objetivo de conversión — que la persona escriba por WhatsApp.
 ## Estructura
 
 ```
-index.html      Contenido y estructura de la página
+index.html                       Página principal
+servicios/masaje.html            Detalle del masaje (galería + precios)
+servicios/limpieza-facial.html   Detalle de la limpieza facial (galería + precios)
 styles.css      Estilos (paleta, tipografía, animaciones de scroll)
 script.js       Enlaces de WhatsApp, reveal al hacer scroll, nav, analítica opcional
 favicon.svg     Ícono del sitio
@@ -30,6 +32,20 @@ vercel.json     Config de despliegue (headers, URLs limpias)
   stock) para evitar un look genérico. Cuando lleguen las fotos/videos reales
   de la sesión, lo ideal es reemplazar `.hero__visual` en `index.html` por
   una imagen o video real (con buena compresión, formato `.webp`/`.mp4`).
+- **Galería "living-photo" en `/servicios/*.html`**: cada página de servicio
+  tiene un panel `.living-photo` con 3 `.living-photo__frame` que van
+  cruzando en loop (crossfade + zoom lento), simulando un GIF sin marco de
+  video ni controles. Hoy cada frame es un degradado + ícono decorativo.
+  Para poner una foto real: en el `<div class="living-photo__frame ...">`
+  correspondiente, cambiar el `style="background:linear-gradient(...)"` por
+  `style="background-image:url('/images/masaje-1.jpg')"` (o agregar un
+  `<img>` con `object-fit:cover` dentro). Para un video real en vez de foto:
+  reemplazar el frame por `<video autoplay muted loop playsinline
+  src="/videos/masaje-1.mp4">` — el loop y el crossfade ya están resueltos
+  por el CSS existente (`@keyframes livingPhotoCycle`), no hay que tocar
+  nada más. Los 3 recuadros de `.gallery` en la misma página son el mismo
+  caso: reemplazar el ícono SVG dentro de `.gallery-card__media` por un
+  `<img>`.
 - **Dirección exacta**: intencionalmente no está publicada (es el domicilio
   particular). Se menciona solo la comuna (Quilicura) y se indica que la
   dirección se confirma por WhatsApp al agendar.
