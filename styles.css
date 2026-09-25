@@ -402,7 +402,9 @@ p {
   position: relative;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
-  background: linear-gradient(155deg, var(--cream-200), var(--sand-300) 60%, var(--terracotta-500) 130%);
+  background-color: var(--sand-300);
+  background-size: cover;
+  background-position: center 30%;
   box-shadow: var(--shadow-soft);
   overflow: hidden;
 }
@@ -412,75 +414,6 @@ p {
   position: absolute;
   inset: 0;
   background-image: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.35), transparent 45%);
-}
-
-.hero__visual-candle {
-  position: absolute;
-  right: 14%;
-  bottom: 12%;
-  width: 26%;
-  aspect-ratio: 2/3;
-  background: linear-gradient(180deg, #fffaf0, #f2e2c4);
-  border-radius: 10px 10px 4px 4px;
-  box-shadow: 0 12px 24px -8px rgba(60, 42, 30, 0.4);
-}
-
-.hero__visual-flame {
-  position: absolute;
-  left: 50%;
-  top: -22px;
-  width: 14px;
-  height: 26px;
-  transform: translateX(-50%);
-  background: radial-gradient(circle at 50% 30%, #fff2c8, var(--terracotta-500) 70%);
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  animation: flicker 2.4s ease-in-out infinite;
-}
-
-@keyframes flicker {
-  0%,
-  100% {
-    transform: translateX(-50%) scale(1) rotate(-2deg);
-  }
-  50% {
-    transform: translateX(-50%) scale(1.1) rotate(2deg);
-  }
-}
-
-.hero__visual-leaf {
-  position: absolute;
-  width: 90px;
-  height: 90px;
-  border-radius: 0 100% 0 100%;
-  background: var(--sage-500);
-  opacity: 0.85;
-}
-
-.hero__visual-leaf--1 {
-  top: 8%;
-  left: -20px;
-  transform: rotate(20deg);
-}
-
-.hero__visual-leaf--2 {
-  top: 22%;
-  left: 10px;
-  width: 60px;
-  height: 60px;
-  background: var(--sage-600);
-  opacity: 0.7;
-  transform: rotate(-10deg);
-}
-
-.hero__visual-towel {
-  position: absolute;
-  left: 8%;
-  bottom: 8%;
-  width: 62%;
-  height: 34%;
-  background: repeating-linear-gradient(100deg, #fffaf2, #fffaf2 10px, #f4ecdd 10px, #f4ecdd 20px);
-  border-radius: 40px;
-  box-shadow: 0 16px 30px -12px rgba(60, 42, 30, 0.35);
 }
 
 .hero__visual-badge {
@@ -914,30 +847,18 @@ section {
   background: rgba(245, 236, 220, 0.14);
 }
 
-/* Media reveal panel: hidden strip that expands on card hover */
+/* Media reveal panel: hidden strip that expands on card hover, showing a real photo */
 .price-card__media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   height: 0;
   opacity: 0;
   margin-bottom: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
+  background-color: var(--sand-300);
+  background-size: cover;
+  background-position: center;
   transition: height 0.45s var(--ease-soft), opacity 0.4s var(--ease-soft), margin 0.45s var(--ease-soft);
-  background: linear-gradient(135deg, var(--blush-300), var(--sand-300));
-}
-
-.price-card__media--facial {
-  background: linear-gradient(135deg, var(--sand-300), var(--sage-500) 140%);
-}
-
-.price-card__media svg {
-  width: 34px;
-  height: 34px;
-  color: var(--brown-900);
-  opacity: 0.75;
-  flex-shrink: 0;
 }
 
 .price-card:hover .price-card__media,
